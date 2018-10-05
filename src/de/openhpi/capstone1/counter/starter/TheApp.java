@@ -10,14 +10,24 @@ public class TheApp extends PApplet {
 
 	InteractiveComponent interactiveCounter;
 
+	/**
+	 * Defines the dimension of the display window width and height in units of pixels.
+	 * If size() is not used, the window will be given a default size of 100 x 100 pixels.
+	 */
 	@Override
 	public void settings() {
-		size(200, 200);
+		size(500, 500);
 	}
 
+	/**
+	 * The setup() function is run once, when the program starts. 
+	 * It's used to define initial environment properties such as screen size and to load media such as images and fonts as the program starts. 
+	 * There can only be one setup() function for each program and it shouldn't be called again after its initial execution.
+	 * If the sketch is a different dimension than the default, the size() function or fullScreen() function must be the first line in setup().
+	 */
 	@Override
-	public void setup() {  // setup() runs once
-		frameRate(30);
+	public void setup() {
+		frameRate(30);		//Specifies the number of frames to be displayed every second.
 		InteractiveCounterBuilder builder = new InteractiveCounterBuilder();
 		GUIComponent.construct(this, builder);
 		interactiveCounter = builder.getComponent();
