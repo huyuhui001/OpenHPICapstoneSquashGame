@@ -33,13 +33,34 @@ public class TheApp extends PApplet {
 		interactiveCounter = builder.getComponent();
 	}
 
+	/**
+	 * draw() loops forever, until stopped
+	 */
 	@Override
-	public void draw() {  // draw() loops forever, until stopped
-		background(204);
-		fill(255);
-		rect(random(100),random(100), 10, 10);
+	public void draw() {
+		/*
+		 * Background color of the game window. The RGB value of GREEN is (0, 255, 0)
+		 */
+		background(0, 255, 0);						
+		
+		/*
+		 * Draw a cycle within the game window and fill in color. 
+		 * The cycle is showing randomly within the game window.
+		 * The RGB value of RED is (255,0,0).
+		 * Use rect(random(100),random(100), 50, 50) to draw a rectangle
+		 * Use ellipse(random(100),random(100), 50, 50) to draw a cycle
+		 */
+		ellipse(random(100),random(100), 50, 50);
+		fill(255, 0, 0);
+		
 		interactiveCounter.update();
 	}
+	
+	/*
+	 * The mouseClicked() function is called after a mouse button has been pressed and then released. 
+	 * Mouse and keyboard events only work when a program has draw(). 
+	 * Without draw(), the code is only run once and then stops listening for events.
+	 */
 	
 	@Override
 	public void mouseClicked() {
